@@ -1,0 +1,28 @@
+# How to create virtual python environment
+
+# Windows
+
+python -m venv venv
+venv\Scripts\activate
+python -m pip install <package-name>
+
+# *nix
+
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install <package-name>
+
+
+# Using venv with GIT
+
+cd your_project # Navigate to your project folder
+python -m venv venv # Create virtual environment
+source venv/bin/activate # Activate virtual environment
+pip install pandas # Install your packages
+pip freeze > requirements.txt # Freeze packages to text file
+deactivate # Deactivate venv
+git init # Initialize repo
+echo 'venv' > .gitignore # Add venv to .gitignore
+git add .
+git commit -m 'initial commit'
+git push
